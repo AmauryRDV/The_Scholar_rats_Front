@@ -4,7 +4,7 @@
         <label for="Date-select">Choisissez une date:</label>
         <br>
             <select id="Date-select"  @change="afficherSalle()">
-                <option v-for="epreuve in this.allEpreuves" name="epreuvedate" value={{epreuve.session}}>{{ epreuve.session }}</option>
+                <option v-for="examen in this.allExamens" name="examendate" value={{examen.date}}>{{ examen.date }}</option>
             </select>
     </div>
 </template>
@@ -12,19 +12,19 @@
 import axios from "axios";
 import { defineComponent } from "vue";
 export default defineComponent({
-    name: "Epreuves",
+    name: "Examens",
     data() {
         return {
             apiUrl: "",
-            allEpreuves: []
+            allExamens: []
         }
     },
     mounted() {
         this.apiUrl = import.meta.env.VITE_API_URL;
-        axios.get(this.apiUrl + "api/Epreuves")
+        axios.get(this.apiUrl + "api/Examens")
             .then(
                 (response) => {
-                    this.allEpreuves = response.data;
+                    this.allExamens = response.data;
                 }
             )
             .catch(

@@ -4,7 +4,7 @@
         <label for="Salle-select">Choisissez une salle:</label>
         <br>
             <select id="Salle-select"  @change="afficherEpreuve()">
-                <option v-for="salle in this.allSalles" name="salleid" value={{salle.id}}>{{ salle.numero  }}</option>
+                <option v-for="salle in this.allSalles" name="salleid" value={{salle.id}}>{{ salle.nom  }}</option>
             </select>
     </div>
 </template>

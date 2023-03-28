@@ -4,7 +4,7 @@
     <label for="Epreuve-select">Choisissez une épreuve:</label>
     <br>
         <select id="Epreuve-select"  @change="afficherExamen()">
-            <option v-for="epreuve in this.allEpreuves" name="epreuveid" value={{epreuve.examen_id}}>{{ epreuve.epreuve }}</option>
+            <option v-for="epreuve in this.allEpreuves" name="epreuveid" value={{epreuve.examen_id}}>{{ epreuve.matiere }}</option>
         </select>
 </div>
 </template>
