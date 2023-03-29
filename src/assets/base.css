@@ -1,4 +1,27 @@
-.cool{
+*
+{
+    padding: 0;
+    margin: 0;
+}
+.cool
+{
     display: flex;
     justify-content: center;
+}
+.container-fluid
+{
+    background-color: lightblue;
+}
+.navbar 
+{
+    padding: 0;
+}
+footer
+{
+    background-color: lightblue;
+    padding: 2%;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
 }

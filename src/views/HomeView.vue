@@ -31,6 +31,7 @@ export default defineComponent({
 
 <template>
   <main>
+    <a href="cartouche">lien pour la cartouche</a>
     <div class="cool">
       <form id="ipc" @submit.prevent="submitForm">
       <Dates></Dates>
