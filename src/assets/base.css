@@ -8,6 +8,32 @@
     display: flex;
     justify-content: center;
 }
+select{
+    cursor: pointer;
+    border-radius: 6px;
+    padding: 3px;
+    background: #eee;
+    box-shadow: 2px 2px 8px lightblue;
+}
+label{
+    font: 16px;
+    color: #666;
+}
+
+button{
+    background-color: lightblue;
+  border: 3px solid rgba(0, 0, 0, 0.6);
+  font-weight: 600;
+  position: relative;
+  outline: none;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  height: 45px;
+  width: 130px;
+}
 .container-fluid
 {
     background-color: lightblue;
