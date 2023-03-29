@@ -1,6 +1,9 @@
 .main
 {
     padding: 2%;
+    text-align: center;
+    justify-content: center;
+    justify-items: center;  
 }
 .temps
 {
@@ -21,4 +24,35 @@
     justify-content: center;
     align-items: center;
     display: grid;
+}
+.cartouche
+{
+    display: grid;
+    grid-template-rows: repeat();
+    grid-template-columns: repeat(2 ,1fr);
+    grid-area: 'a a';
+    justify-items: center;
+    width: 60%; 
+    margin-left: 20%;
+    border: 2px solid#ccc;
+    padding: 1%;
+    justify-content: space-between;
+    margin-bottom: 4%;
+}
+.cartouche p
+{
+    padding-top: 2%;
+    width:100%;
+}
+.description
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 5%;
+}
+h1
+{
+    font-size: 3em;
+    font-weight: bold;
 }
