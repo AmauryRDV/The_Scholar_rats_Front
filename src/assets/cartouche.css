@@ -12,12 +12,12 @@
 .temps label
 {
     margin-right: 2%;
-    margin-bottom: 2%;
     margin-top: 2%;
-    font-size: 1.3em;
+    font-size: 1.2em;
     background-color: #ccc;
     padding: 1%;
     font-weight: 800;
+    color: rgba(0, 0, 0, 0.856);
 }
 .containe_horloge
 {
@@ -40,7 +40,7 @@
     margin-bottom: 4%;
 }
 .cartouche p
-{
+{   
     padding-top: 2%;
     width:100%;
 }
@@ -53,6 +53,6 @@
 }
 h1
 {
-    font-size: 3em;
+    font-size: 2.5em;
     font-weight: bold;
 }
