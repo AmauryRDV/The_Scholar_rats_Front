@@ -1,5 +1,6 @@
 <template>
   <main>
+    <a href="cartouche">efm,feazkf</a>
     <div class="cool">
       <form id="ipc" @submit.prevent="submitForm">
         <br>
