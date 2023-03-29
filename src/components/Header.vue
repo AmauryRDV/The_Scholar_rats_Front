@@ -10,9 +10,7 @@
   </div>
 </nav>
 
-<footer>
-  <p>&copy;2023 TRS_PROJECT_FRONT</p>
-</footer>
+
 </template>
 
 
