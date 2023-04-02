@@ -11,7 +11,7 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/Cartouche',
+      path: '/Cartouche/:id',
       name: 'cartouche',
       component: Cartouche
       

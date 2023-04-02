@@ -15,27 +15,27 @@
     <div style="visibility:hidden;" id="Salle-option">
         <label for="Salle-select">Choisissez une salle:</label>
         <br>
-            <select id="Salle-select"  @change="afficherEpreuve()">
+            <select v-model="this.salle" id="Salle-select"  @change="afficherEpreuve()">
               <option>--Choisissez une salle--</option>
-                <option v-for="sallebydate in this.SallesByDate" name="salleid" value={{sallebydate.id}}>{{ sallebydate.nom  }}</option>
+                <option v-for="sallebydate in this.SallesByDate" name="salleid" :value=sallebydate.id>{{ sallebydate.nom  }}</option>
             </select>
     </div>
     <br>
     <div id="Epreuve-option" style="visibility:hidden;">
     <label for="Epreuve-select">Choisissez une épreuve:</label>
     <br>
-        <select id="Epreuve-select"  @change="afficherFormation()">
+        <select v-model="this.epreuve" id="Epreuve-select"  @change="afficherFormation()">
           <option>--Choisissez une epreuve--</option>
-            <option v-for="epreuve in this.EpreuvesBydates" name="epreuveid" value={{epreuve.examen_id}}>{{ epreuve.matiere }}</option>
+            <option v-for="epreuve in this.EpreuvesBydates" name="epreuveid" :value=epreuve.id>{{ epreuve.matiere }}</option>
         </select>
     </div>
     <br>
     <div style="visibility:hidden;" id="Formation-option">
         <label for="Formation-select">Choisissez une formation:</label>
         <br>
-            <select id="Formation-select"  @change="afficherBouton()">
+            <select  v-model="this.formation" id="Formation-select"  @change="afficherBouton()">
               <option>--Choisissez une formation--</option>
-                <option v-for="formation in this.FormationsBydates" name="formationid" value={{formation.id}}>{{ formation.nom   }}</option>
+                <option v-for="formation in this.FormationsBydates" name="formationid" :value=formation.id>{{ formation.nom   }}</option>
             </select>
     </div>
       <br>
@@ -70,6 +70,10 @@ export default defineComponent({
             EpreuvesBydates:[],
             FormationsBydates:[],
             date:'',
+            epreuve:'',
+            salle:'',
+            formation:'',
+
             
       }
   },
@@ -89,9 +93,13 @@ export default defineComponent({
     },
   methods:{
       submitForm(){
-        this.$router.push('/cartouche');
+        axios.get(this.apiUrl + "api/cartouche/"+this.date+"/"+this.epreuve+"/"+this.salle+"/"+this.formation)
+        .then((response)=>{
+          this.cartouche=response.data;
+          this.$router.push({name: 'cartouche', params: {id: this.cartouche.id}});  
+        })
       },
-
+      
       afficherSalle()
           {
            axios.get(this.apiUrl+"api/salles/date/"+this.date)
