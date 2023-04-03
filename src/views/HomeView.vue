@@ -57,6 +57,7 @@ import Dates from "../components/Dates.vue";*/
 import styles from "../assets/base.css";
 import { defineComponent } from "vue";
 import axios from "axios";
+import { isString } from "@vue/shared";
 
 export default defineComponent({
   name: "HomeView",
@@ -95,8 +96,12 @@ export default defineComponent({
       submitForm(){
         axios.get(this.apiUrl + "api/cartouche/"+this.date+"/"+this.epreuve+"/"+this.salle+"/"+this.formation)
         .then((response)=>{
-          this.cartouche=response.data;
-          this.$router.push({name: 'cartouche', params: {id: this.cartouche.id}});  
+          this.cartouche=response.data; 
+          if (typeof response.data ==='string')
+          {
+            alert(response.data);
+          }
+          this.$router.push({name: 'cartouche', params: {id: this.cartouche.id}});
         })
       },
       
@@ -111,7 +116,7 @@ export default defineComponent({
           
           afficherEpreuve()
           {
-            axios.get(this.apiUrl+"api/Epreuves/date/"+this.date)
+            axios.get(this.apiUrl+"api/Epreuves/"+this.date+"/"+this.salle)
            .then((response) => {
             this.EpreuvesBydates=response.data;});
             var elem = document.getElementById('Epreuve-option');
@@ -120,7 +125,7 @@ export default defineComponent({
 
           afficherFormation()
           {
-            axios.get(this.apiUrl+"api/Formations/date/"+this.date)
+            axios.get(this.apiUrl+"api/Formations/"+this.date+"/"+this.salle+"/"+this.epreuve)
            .then((response) => {
             this.FormationsBydates=response.data;});
             var elem = document.getElementById('Formation-option');
