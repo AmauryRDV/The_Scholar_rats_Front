@@ -78,21 +78,55 @@ export default({
 </script>
 
 <template>
-    <header>
-    </header>
+
+
+    
 
     <section class="main">
     <div v-if="this.loading===true">loading</div>
     <div v-else>
-        <h1>CARTOUCHE</h1>
-    <div class="cartouche">
-        <p>academie : {{ this.cartouche.formation.academie }} </p> <p>Session : {{ new Date(this.cartouche.date).getFullYear() }}</p> <p>Modele : EN</p>
-        <p>Examen ou Concours : {{ this.cartouche.epreuve.matiere  }}</p> <p>Serie : {{ this.cartouche.formation.serie }}</p>
-        <p>Spécialité/Option : {{ this.cartouche.formation.serie }}</p> <p>Repère de l'épreuve : {{ this.cartouche.repere }}</p>
-        <p>Epreuve/Sous-épreuve : {{ this.cartouche.epreuve.matiere }}</p>
-    </div>
+        <div class="cartouche-materialise" v-if="this.cartouche.estdematerialise==0" name="materialise">
+        <div class="line">
+        <div class="text"><p>Examen ou Concours : {{ this.cartouche.epreuve.matiere  }}</p></div> <div class="text"><p>Serie * : {{ this.cartouche.formation.serie }}</p></div>
+        </div>
+        <div class="line">
+        <div class="text"><p>Repère de l'épreuve : {{ this.cartouche.repere }}</p></div> <div class="text"><p>Epreuve/Sous-épreuve : {{ this.cartouche.epreuve.matiere }}</p></div>
+        </div>
+        <div class="line">
+        <div class="text m"><p>Session : {{ new Date(this.cartouche.date).getFullYear() }}</p></div>
+        </div>
+        </div>
 
-    
+        <div class="cartouche" v-else>
+        <div class="line">
+        <div class="text"> <p>academie : {{ this.cartouche.formation.academie }} </p></div> <div class="text"><p>Session : {{ new Date(this.cartouche.date).getFullYear() }}</p></div> <div class="text"><p>Modele : EN</p></div>
+        </div>
+        <div class="line">
+        <div class="text"> <p>Examen ou Concours : {{ this.cartouche.epreuve.matiere  }}</p></div> <div class="text"><p>Serie * : {{ this.cartouche.formation.serie }}</p></div>
+        </div>
+        <div class="line">
+        <div class="text"> <p>Spécialité/Option : {{ this.cartouche.formation.serie }}</p></div> <div class="text"><p>Repère de l'épreuve : {{ this.cartouche.repere }}</p></div>
+        </div>
+        <div class="line">
+        <div class="text"> <p>Epreuve/Sous-épreuve : {{ this.cartouche.epreuve.matiere }}</p></div>
+        </div>
+        </div>
+        <h1>ALERTES</h1>
+        <div class="table-alerte">
+            <table>
+                <tr>
+                    <th>Titre</th>
+                    <th>Description</th>
+                    <th>Lien</th>
+                </tr>
+                <tr>
+                    <td>afzfafza</td>
+                    <td>zaffza</td>
+                    <td>azfzaffzaf</td>
+                </tr>
+            </table>
+        </div>
+        
         <div class="temps">
             <label for="debut">Debut de l'épreuve : {{ this.heuredebut.format("HH:mm") }}</label>
             <label for="fin">Fin de l'épreuve : {{ this.heurefin.format("HH:mm") }}</label>
@@ -104,6 +138,6 @@ export default({
     </div>
     </div>
     </section>
-        
+    
 
 </template>
