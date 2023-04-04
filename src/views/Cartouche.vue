@@ -14,7 +14,6 @@ export default({
         alertes: {},
         loading: false,
         timer:"",
-        mescouilles:"",
         horloge:"",
         timer2:"",
         heuredebut:"",
@@ -33,13 +32,12 @@ export default({
   mounted() {
     this.timer = setInterval(()=>{
         this.getAlert()
-        if(this.alertes.id>0)
+        if(Object.keys(this.alertes).length != 0)
         {
         confirm("Alerte :"+this.alertes.titre+"\n"+"Infos :"+this.alertes.description+"\n"+"Lien :"+this.alertes.pdf)
-        }
         this.alertes={};
-
-    },60000)
+        }
+    },10000)
     this.timer2 = setInterval(()=>
     {
         this.showDate()
@@ -61,8 +59,7 @@ export default({
                     this.heuredebut=moment("2025-01-01 "+ this.cartouche.epreuve.debutepreuve,"YYYY-DD-MM HH:mm:ss");
                     this.heurefin=moment("2025-01-01 "+ this.cartouche.epreuve.finepreuve,"YYYY-DD-MM HH:mm:ss");
                     this.miseenloge=moment("2025-01-01 "+ this.cartouche.epreuve.miseenloge,"YYYY-DD-MM HH:mm:ss");
-                    //this.heurefin2=moment(this.heurefin);
-                   // this.test=moment(this.heurefin2.subtract(this.heuredebut.hours(),"hours"));
+
                 }
             )
         },
@@ -103,7 +100,7 @@ export default({
             <label for="tier_temp">Tier-temp : </label>
         </div>
     <div>
-        <span id='horloge' style="background-color:#219bc3;color:white;font-size:7em;">{{ this.horloge }}</span>
+        <span id='horloge' style="color:lightblue;font-size:7em;">{{ this.horloge }}</span>
     </div>
     </div>
     </section>
