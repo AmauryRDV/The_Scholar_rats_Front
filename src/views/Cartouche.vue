@@ -179,29 +179,29 @@ export default({
     <div v-else>
         <div class="cartouche-materialise" v-if="this.cartouche.estdematerialise==0" name="materialise">
         <div class="line">
-        <div class="text"><p>Examen ou Concours : {{ this.cartouche.epreuve.matiere  }}</p></div> <div class="text"><p>Serie * : {{ this.cartouche.formation.serie }}</p></div>
+        <div class="text"><p>Examen ou Concours : <b>{{ this.cartouche.epreuve.matiere  }}</b></p></div> <div class="text"><p>Serie * : <b>{{ this.cartouche.formation.serie }}</b></p></div>
         </div>
         <div class="line">
-        <div class="text"><p>Repère de l'épreuve : {{ this.cartouche.repere }}</p></div> <div class="text"><p>Epreuve/Sous-épreuve : {{ this.cartouche.epreuve.matiere }}</p></div>
+        <div class="text"><p>Repère de l'épreuve : <b>{{ this.cartouche.repere }}</b></p></div> <div class="text"><p>Epreuve/Sous-épreuve : <b>{{ this.cartouche.epreuve.matiere }}</b></p></div>
         </div>
         <div class="line">
-        <div class="text m"><p>Session : {{ new Date(this.cartouche.date).getFullYear() }}</p></div>
+        <div class="text m"><p>Session : <b>{{ new Date(this.cartouche.date).getFullYear() }}</b></p></div>
         </div>
         </div>
         <div v-else>
             <div class="contain-cartouche">
         <div class="cartouche" >
         <div class="line">
-        <div class="text"> <p>academie : {{ this.cartouche.formation.academie }} </p></div> <div class="text"><p>Session : {{ new Date(this.cartouche.date).getFullYear() }}</p></div> <div class="text"><p>Modele : EN</p></div>
+        <div class="text"> <p>academie : <b>{{ this.cartouche.formation.academie }}</b> </p></div> <div class="text"><p>Session : <b>{{ new Date(this.cartouche.date).getFullYear() }}</b></p></div> <div class="text"><p>Modele :  <b> EN</b></p></div>
         </div>
         <div class="line">
-        <div class="text"> <p>Examen ou Concours : {{ this.cartouche.epreuve.matiere  }}</p></div> <div class="text"><p>Serie * : {{ this.cartouche.formation.serie }}</p></div>
+        <div class="text"> <p>Examen ou Concours : <b>{{ this.cartouche.epreuve.matiere  }}</b></p></div> <div class="text"><p>Serie * : <b>{{ this.cartouche.formation.serie }}</b></p></div>
         </div>
         <div class="line">
-        <div class="text"> <p>Spécialité/Option : {{ this.cartouche.formation.serie }}</p></div> <div class="text"><p>Repère de l'épreuve : {{ this.cartouche.repere }}</p></div>
+        <div class="text"> <p>Spécialité/Option : <b>{{ this.cartouche.formation.serie }}</b></p></div> <div class="text"><p>Repère de l'épreuve : <b> {{ this.cartouche.repere }}</b></p></div>
         </div>
         <div class="line">
-        <div class="text"> <p>Epreuve/Sous-épreuve : {{ this.cartouche.epreuve.matiere }}</p></div>
+        <div class="text"> <p>Epreuve/Sous-épreuve : <b>{{ this.cartouche.epreuve.matiere }}</b></p></div>
         </div>
         </div>
     </div>
