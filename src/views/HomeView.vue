@@ -1,4 +1,12 @@
 <template>
+  <nav class="navbar bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="/public/assets/logo/LyceeDarkTheme.jpg" alt="Logo" width="100" height="90" class="d-inline-block align-text-top">
+    </a>
+  </div>
+</nav>
+
   <main>
     <div class="cool">
       <form id="ipc" @submit.prevent="submitForm">
@@ -7,7 +15,6 @@
         <label for="Date-select">Choisissez une date:</label>
         <br>
             <select  v-model="this.date" id="Date-select" @change="afficherSalle()">
-              <option>--Choisissez une date--</option>
                 <option v-for="examen in this.allExamens" name="examendate">{{ examen.date }}</option>
             </select>
         </div>
@@ -16,7 +23,6 @@
         <label for="Salle-select">Choisissez une salle:</label>
         <br>
             <select v-model="this.salle" id="Salle-select"  @change="afficherEpreuve()">
-              <option>--Choisissez une salle--</option>
                 <option v-for="sallebydate in this.SallesByDate" name="salleid" :value=sallebydate.id>{{ sallebydate.nom  }}</option>
             </select>
     </div>
@@ -25,7 +31,6 @@
     <label for="Epreuve-select">Choisissez une épreuve:</label>
     <br>
         <select v-model="this.epreuve" id="Epreuve-select"  @change="afficherFormation()">
-          <option>--Choisissez une epreuve--</option>
             <option v-for="epreuve in this.EpreuvesBydates" name="epreuveid" :value=epreuve.id>{{ epreuve.matiere }}</option>
         </select>
     </div>
@@ -34,7 +39,6 @@
         <label for="Formation-select">Choisissez une formation:</label>
         <br>
             <select  v-model="this.formation" id="Formation-select"  @change="afficherBouton()">
-              <option>--Choisissez une formation--</option>
                 <option v-for="formation in this.FormationsBydates" name="formationid" :value=formation.id>{{ formation.nom   }}</option>
             </select>
     </div>
