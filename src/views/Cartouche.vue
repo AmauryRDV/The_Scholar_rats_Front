@@ -188,8 +188,9 @@ export default({
         <div class="text m"><p>Session : {{ new Date(this.cartouche.date).getFullYear() }}</p></div>
         </div>
         </div>
-
-        <div class="cartouche" v-else>
+        <div v-else>
+            <div class="contain-cartouche">
+        <div class="cartouche" >
         <div class="line">
         <div class="text"> <p>academie : {{ this.cartouche.formation.academie }} </p></div> <div class="text"><p>Session : {{ new Date(this.cartouche.date).getFullYear() }}</p></div> <div class="text"><p>Modele : EN</p></div>
         </div>
@@ -203,6 +204,9 @@ export default({
         <div class="text"> <p>Epreuve/Sous-épreuve : {{ this.cartouche.epreuve.matiere }}</p></div>
         </div>
         </div>
+    </div>
+</div>
+        <div class="tous-alerte">
         <h1>ALERTES</h1>
         <div class="table-alerte">
             <table>
@@ -218,14 +222,16 @@ export default({
                 </tr>
             </table>
         </div>
-        
+        </div>
+
+
         <div class="temps">
             <label for="debut">Debut de l'épreuve : {{ this.heuredebut.format("HH:mm") }}</label>
             <label for="fin">Fin de l'épreuve : {{ this.heurefin.format("HH:mm") }}</label>
             <label for="sortie">Mise en loge : {{ this.miseenloge.format("HH:mm") }}</label>
             <label for="tier_temp">Tier-temp : {{ this.tiertemps.format("HH:mm") }}</label>
         </div>
-    <div>
+    <div class="horloge">
         <span id='horloge' style="color:blue;font-size:7em;">{{ this.horloge }}</span>
     </div>
     <div style="display: flex;flex-direction: column;align-items: center;">

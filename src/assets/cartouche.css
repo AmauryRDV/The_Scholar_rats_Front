@@ -1,7 +1,6 @@
 .main
 {
     padding: 1%;
-    text-align: center;
     margin: 0; 
 }
 .temps
@@ -18,12 +17,19 @@
     font-weight: 800;
     color: rgba(0, 0, 0, 0.856);
 }
+.horloge
+{
+    text-align: center;
+    justify-content: center;
+}
 .cartouche
 {
-    width: 900px; 
-    height: 260px;
-    margin-left: -300px;
+    width: 70%; 
+    height: auto;
     border: 2px solid#ccc;
+    justify-content: left;
+    display: flex;
+    margin-left: 3%;
     padding: 1%;
     margin-bottom: 1%;
     overflow: hidden;
@@ -32,11 +38,13 @@
 }
 .cartouche-materialise
 {
-    margin-left: -300px;
-    width: 900px; 
-    height: 160px;
+    width: 70%; 
+    height: auto;
     border: 2px solid#ccc;
     padding: 1%;
+    margin-left: 3%;
+    justify-content: left;
+    display: flex;
     margin-bottom: 1%;
     overflow: hidden;
     display: inline-block;
@@ -89,23 +97,19 @@
 }
 .containe-cartouche
 {
+
     width: 170px;
 }
 .table-alerte
 {
-
-    position: absolute;
-    width: 240px;
+    width: 80%;
     display: flex;
-    right: 35px;
-    top: 50px;
-    height: 160;
     border: #ccc solid 1px;
 
 }
 .table-alerte table
 {
-    width: 260px;
+    width: 100%;
     
 }
 .table-alerte table tr th,td
@@ -116,12 +120,16 @@
 }
 h1
 {
-    position: absolute;
-    top: 10px;
-    right: 105px;
+    width: 80%;
+    text-align: center;
     font-size: 25px;
     font-weight: bolder;
 }
-
-
+.tous-alerte
+{
+    position: absolute;
+    width: 25%;
+    top: 0;
+    right: 0;
+}
 
