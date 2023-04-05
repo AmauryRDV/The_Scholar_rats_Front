@@ -232,10 +232,10 @@ export default({
             <label for="tier_temp">Tier-temp : {{ this.tiertemps.format("HH:mm") }}</label>
         </div>
     <div class="horloge">
-        <span id='horloge' style="color:blue;font-size:7em;">{{ this.horloge }}</span>
+        <svg style="width: 5%;margin-bottom: 5%;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 0a256 256 0 1 1 0 512A256 256 0 1 1 256 0zM232 120V256c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"/></svg><span id='horloge' style="color:blue;font-size:7em;">{{ this.horloge }}</span>
     </div>
     <div style="display: flex;flex-direction: column;align-items: center;">
-        <span id="chronometre" style="color:green;font-size:7em;visibility: hidden;display: none;">{{ this.chronometre.format("HH:mm:ss")}}</span>
+        <svg style="width: 5%;margin-bottom: 5%;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M176 0c-17.7 0-32 14.3-32 32s14.3 32 32 32h16V98.4C92.3 113.8 16 200 16 304c0 114.9 93.1 208 208 208s208-93.1 208-208c0-41.8-12.3-80.7-33.5-113.2l24.1-24.1c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L355.7 143c-28.1-23-62.2-38.8-99.7-44.6V64h16c17.7 0 32-14.3 32-32s-14.3-32-32-32H224 176zm72 192V320c0 13.3-10.7 24-24 24s-24-10.7-24-24V192c0-13.3 10.7-24 24-24s24 10.7 24 24z"/></svg> <span id="chronometre" style="color:green;font-size:7em;visibility: hidden;display: none;">{{ this.chronometre.format("HH:mm:ss")}}</span>
     </div>
     <div style="display: flex;flex-direction: row;justify-content:center;">
             <button id="lancer" @click="setGo()">Lancer</button>
