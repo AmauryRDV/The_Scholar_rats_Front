@@ -13,6 +13,7 @@ export default({
         cartouche: {},
         alertes: {},
         loading: false,
+        alertesverif:[],
         timer:"",
         horloge:"",
         timer2:"",
@@ -22,6 +23,7 @@ export default({
         listeAlertes:[],
         chronometre:moment("2025-01-01 00:00:00","HH:mm:ss"),
         go:"1",
+        url:"http://tsr_project.test/",
 
 
 
@@ -32,6 +34,7 @@ export default({
     // Avant le chargement de la page
     this.apiUrl = import.meta.env.VITE_API_URL
     this.getCartouche()
+    this.getAlertverif()
   },
   mounted() {
     // Lors de l'ouverture de la page
@@ -44,7 +47,7 @@ export default({
         {
         confirm("Alerte :"+this.alertes.titre+"\n"+"Infos :"+this.alertes.description+"\n"+"Lien :"+this.alertes.pdf)
         //Envoie l'alerte vers le tableau et vide la liste des alertes
-        this.listeAlertes.push({titre: this.alertes.titre, description: this.alertes.description, lien: this.alertes.lien})
+        this.listeAlertes.push({titre: this.alertes.titre, description: this.alertes.description, pdf: this.alertes.pdf})
         this.alertes={};
         }
     },60000)
@@ -70,6 +73,7 @@ export default({
         this.showDate()
     },1000)
     },
+
   methods:{
     //Définie si on lance le chrono ou qu'on le stop
         setGo()
@@ -164,7 +168,19 @@ export default({
                     this.alertes = response.data;
                 }
             )
-        }
+        },
+
+        getAlertverif()
+        {
+            axios.get(this.apiUrl + "api/alerte/verif/"+this.$route.params.id)
+            .then(
+                (response) => {
+                    this.alertesverif = response.data;
+                    this.alertesverifstock=Array.from(this.alertesverif);
+                    this.alertesverifstock.forEach(alerte => {this.listeAlertes.push({titre: alerte.titre, description: alerte.description, pdf: alerte.pdf})});
+                }
+            )
+        },
         },
 })
 </script>
@@ -218,7 +234,7 @@ export default({
                 <tr v-for="alerte in this.listeAlertes">
                     <td>{{ alerte.titre }}</td>
                     <td>{{ alerte.description }}</td>
-                    <td>{{ alerte.lien }}</td>
+                    <td><a target="_blank" :href="href=this.url+alerte.pdf">Lien</a></td>
                 </tr>
             </table>
         </div>
