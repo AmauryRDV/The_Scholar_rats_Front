@@ -1,29 +1,5 @@
-# the_scholar_rats_fronts
+<h1 align="center" id="title">The_Scholar_rats_Front</h1>
 
-This template should help get you started developing with Vue 3 in Vite.
+<p align="center"><img src="https://socialify.git.ci/AmauryRDV/The_Scholar_rats_Front/image?language=1&amp;owner=1&amp;name=1&amp;stargazers=1&amp;theme=Light" alt="project-image"></p>
 
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+<p id="description">The Scholars Rats est un groupe regroupant des étudiants de BTS SIO en deuxième année ce groupe a pour objectif de créer sur Laravel et Vue.JS une application Web. Le groupe est composé Thomas Lyonnet le chef d’équipe du projet Enzo Da Silva Ribeiro et Amaury Richard de Vesvrotte. Ce projet a débuté le 30 novembre 2022 et sera menée jusqu’au 8 Mars 2023 Soit une durée de 7 semaines étant donné que le stage a lieu entre temps du 2 Janvier 2023 au 3 Février 2023. L’objectif du projet est de développer en Vue.JS une application Web permettant de faciliter les étudiants durant les épreuves de Bac et de BTS avec un accompagnement pour remplir l’entête des feuilles avec les infos de l’épreuve (règles Matériel Dico) et les heures (Début Heure de sortie autorisée Heure de fin Durée) Tiers temps compris la date et surtout une Horloge serons affichée en permanence pour permettre aux étudiants de connaitre l’heure. Il sera possible aussi de mettre dans un encadrer des informations supplémentaires comme s’il y a une erreur sur l’une des épreuves par exemple. Le directeur disposera d’un compte de type admin pour pouvoir se connecter sur le Backend en Laravel. Bien avant les épreuves le directeur pourra créer des cartouches en sélectionnant les informations nécessaires (Date Heure Période de la journée). En cas d’erreur de la part du rectorat le directeur peut ajouter le PDF dans le dossier et envoyer une alerte aux surveillants qui surveillent cette épreuve. Le projet s’adresse aux étudiants du lycée Pasteur Mont Roland et plus sur le long terme si ce dernier est fonctionnel et intéressant de plus ce projet vise aussi les surveillants et le directeur en facilitant la préparation et l’organisation des épreuves.</p>
