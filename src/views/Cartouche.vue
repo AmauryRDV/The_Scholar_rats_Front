@@ -227,14 +227,15 @@ export default({
         <div class="table-alerte">
             <table>
                 <tr>
-                    <th>Titre</th>
-                    <th>Description</th>
+                    <th id="pour_border">Titre</th>
+                    <th id="pour_border">Description</th>
                     <th>Lien</th>
                 </tr>
                 <tr v-for="alerte in this.listeAlertes">
-                    <td>{{ alerte.titre }}</td>
-                    <td>{{ alerte.description }}</td>
-                    <td><a target="_blank" :href="href=this.url+alerte.pdf">Lien</a></td>
+                    <td id="pour_border" class="pour_border">{{ alerte.titre }}</td>
+                    <td id="pour_border" class="pour_border"> <details> <summary>Description</summary>{{ alerte.description }}</details></td>
+                    <td class="pour_border"><a target="_blank" :href="href=this.url+alerte.pdf">Lien</a></td>
+                    
                 </tr>
             </table>
         </div>
@@ -245,7 +246,7 @@ export default({
             <label for="debut">Debut de l'épreuve : {{ this.heuredebut.format("HH:mm") }}</label>
             <label for="fin">Fin de l'épreuve : {{ this.heurefin.format("HH:mm") }}</label>
             <label for="sortie">Mise en loge : {{ this.miseenloge.format("HH:mm") }}</label>
-            <label for="tier_temp">Tier-temp : {{ this.tiertemps.format("HH:mm") }}</label>
+            <label for="tier_temp">tiers-temps : {{ this.tiertemps.format("HH:mm") }}</label>
         </div>
     <div class="horloge">
         <div class="le-tout">
