@@ -181,8 +181,15 @@ export default({
                 }
             )
         },
+        myFunction() {
+        alert("this.alertes.description");
+            },
         },
 })
+
+
+
+
 </script>
 
 <template>
@@ -233,7 +240,8 @@ export default({
                 </tr>
                 <tr v-for="alerte in this.listeAlertes">
                     <td id="pour_border" class="pour_border">{{ alerte.titre }}</td>
-                    <td id="pour_border" class="pour_border"> <details> <summary>Description</summary>{{ alerte.description }}</details></td>
+                    <td id="pour_border" class="pour_border"> <button @click="myFunction()" > Description</button>
+                    </td>
                     <td class="pour_border"><a target="_blank" :href="href=this.url+alerte.pdf">Lien</a></td>
                     
                 </tr>
